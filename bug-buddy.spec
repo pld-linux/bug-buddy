@@ -1,12 +1,12 @@
 Summary:	Utility to ease the reporting of bugs within the GNOME
 Summary(pl):	Narzêdzie u³atwiaj±ce zg³aszanie b³êdów w ¶rodowisku GNOME
 Name:		bug-buddy
-Version:	2.4.1.1
+Version:	2.5.1
 Release:	1
 License:	GPL
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/2.4/%{name}-%{version}.tar.bz2
-# Source0-md5:	1f53b2e9b3967cafe5e3ae150dc0efc7
+Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/2.5/%{name}-%{version}.tar.bz2
+# Source0-md5:	7f79a7c3581bb4725b73138b221c4bdf
 URL:		http://www.gnome.org/
 BuildRequires:	gnome-desktop-devel >= 2.4.0
 BuildRequires:	gnome-vfs2-devel >= 2.4.0
@@ -33,6 +33,8 @@ KDE.
 %setup -q
 
 %build
+glib-gettextize --copy --force
+intltoolize --copy --force
 %configure
 %{__make}
 
