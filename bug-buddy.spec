@@ -1,7 +1,7 @@
 Summary:	Utility to ease the reporting of bugs within the GNOME
 Summary(pl):	Narzêdzie u³atwiaj±ce zg³aszanie b³êdów w ¶rodowisku GNOME
 Name:		bug-buddy
-Version:	2.2.103
+Version:	2.2.104
 Release:	1
 License:	GPL
 Group:		X11/Applications
@@ -9,7 +9,7 @@ Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/2.2/%{name}-%{version}.t
 URL:		http://www.gnome.org/
 BuildRequires:	scrollkeeper
 BuildRequires:	libgnomeui-devel
-BuildRequires:	gnome-vfs2-devel >= 2.1.5
+BuildRequires:	gnome-vfs2-devel >= 2.2.0
 BuildRequires:	libgnomecanvas-devel
 BuildRequires:	libglade2-devel
 BuildRequires:	libxml2-devel
