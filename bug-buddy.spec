@@ -6,6 +6,7 @@ Release:	1
 License:	GPL
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/2.3/%{name}-%{version}.tar.bz2
+# Source0-md5:	49851fedb9a491b74479a5059d0d32b9
 URL:		http://www.gnome.org/
 BuildRequires:	scrollkeeper
 BuildRequires:	libgnomeui-devel
