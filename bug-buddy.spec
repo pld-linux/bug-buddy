@@ -1,7 +1,7 @@
 Summary:	Utility to ease the reporting of bugs within the GNOME
 Summary(pl):	Narzêdzie u³atwiaj±ce zg³aszanie b³êdów w ¶rodowisku GNOME
 Name:		bug-buddy
-Version:	2.2.99
+Version:	2.2.100
 Release:	1
 License:	GPL
 Group:		X11/Applications
