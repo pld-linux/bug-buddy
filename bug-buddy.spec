@@ -39,12 +39,8 @@ KDE.
 %install
 rm -rf $RPM_BUILD_ROOT
 
-#install -d $RPM_BUILD_ROOT%{_applnkdir}/Help
-
-%{__make} DESTDIR=$RPM_BUILD_ROOT install \
-	omf_dest_dir=%{_omf_dest_dir}/%{name}
-
-#install src/*.desktop $RPM_BUILD_ROOT%{_applnkdir}/Help
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT 
 
 %find_lang %{name} --with-gnome --all-name
 
@@ -60,12 +56,9 @@ rm -rf $RPM_BUILD_ROOT
 
 %attr(755,root,root) %{_bindir}/*
 %{_mandir}/man1/*
-
-#%{_applnkdir}/*/*.desktop
-
-%{_datadir}/application-registry/*.*
-%{_datadir}/applications/*.*
+%{_datadir}/application-registry/*
+%{_datadir}/applications/*
 %{_datadir}/bug-buddy
 %{_datadir}/mime-info/*
 %{_pixmapsdir}/*
-%{_omf_dest_dir}/%{name}
+%{_omf_dest_dir}/*
