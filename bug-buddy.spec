@@ -1,27 +1,27 @@
 Summary:	Utility to ease the reporting of bugs within the GNOME
 Summary(pl):	Narzêdzie u³atwiaj±ce zg³aszanie b³êdów w ¶rodowisku GNOME
 Name:		bug-buddy
-Version:	2.8.0
-Release:	3
-License:	GPL
+Version:	2.10.0
+Release:	1
+License:	GPL v2
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/2.8/%{name}-%{version}.tar.bz2
-# Source0-md5:	b4c90bb9e1762803d083026b000349ea
+Source0:	http://ftp.gnome.org/pub/gnome/sources/bug-buddy/2.10/%{name}-%{version}.tar.bz2
+# Source0-md5:	c821a933f3d7be64071c7bfcb07ee1ac
 Patch0:		%{name}-desktop.patch
-Patch1:		%{name}-omf.patch
 URL:		http://www.gnome.org/
-BuildRequires:	GConf2-devel >= 2.7.92
+BuildRequires:	GConf2-devel >= 2.10.0
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	gnome-desktop-devel >= 2.7.92
-BuildRequires:	gnome-vfs2-devel >= 2.7.92
-BuildRequires:	gtk+2-devel >= 2:2.4.0
-BuildRequires:	intltool >= 0.29
-BuildRequires:	libglade2-devel >= 1:2.4.0
-BuildRequires:	libgnomeui-devel >= 2.7.92
-BuildRequires:	libxml2-devel >= 2.4.6
+BuildRequires:	gnome-desktop-devel >= 2.10.0
+BuildRequires:	gnome-menus-devel >= 2.10.0
+BuildRequires:	gnome-vfs2-devel >= 2.10.0
+BuildRequires:	gtk+2-devel >= 2:2.6.4
+BuildRequires:	intltool >= 0.33
+BuildRequires:	libglade2-devel >= 1:2.5.1
+BuildRequires:	libgnomeui-devel >= 2.10.0
+BuildRequires:	libxml2-devel >= 2.4.7
 BuildRequires:	scrollkeeper >= 0.3.8
-Requires(post):	GConf2 >= 2.7.92
+Requires(post):	GConf2 >= 2.10.0
 Requires(post,postun):	scrollkeeper
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -41,7 +41,6 @@ KDE.
 %prep
 %setup -q
 %patch0 -p1
-%patch1 -p1
 
 %build
 glib-gettextize --copy --force
@@ -51,7 +50,6 @@ intltoolize --copy --force
 %{__automake}
 %configure \
 	--disable-schemas-install
-
 %{__make}
 
 %install
