@@ -1,18 +1,19 @@
 Summary:	Utility to ease the reporting of bugs within the GNOME
 Summary(pl):	Narzêdzie u³atwiaj±ce zg³aszanie b³êdów w ¶rodowisku GNOME
 Name:		bug-buddy
-Version:	2.9.3
+Version:	2.9.91
 Release:	1
 License:	GPL
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/2.9/%{name}-%{version}.tar.bz2
-# Source0-md5:	f9d4c0643f91a1a14d529081c71c6676
+# Source0-md5:	beea245dcb3a27449ac30e1499f0d961
 Patch0:		%{name}-desktop.patch
 URL:		http://www.gnome.org/
 BuildRequires:	GConf2-devel >= 2.9.90
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	gnome-desktop-devel >= 2.9.91
+BuildRequires:	gnome-menus-devel >= 2.9.90
 BuildRequires:	gnome-vfs2-devel >= 2.9.90
 BuildRequires:	gtk+2-devel >= 2:2.6.2
 BuildRequires:	intltool >= 0.29
@@ -87,5 +88,4 @@ umask 022
 %{_datadir}/mime-info/*
 %{_desktopdir}/*
 %{_pixmapsdir}/*
-%{_omf_dest_dir}/*
 %{_sysconfdir}/gconf/schemas/*
