@@ -1,15 +1,15 @@
 Summary:	Utility to ease the reporting of bugs within the GNOME
 Summary(pl):	Narzêdzie u³atwiaj±ce zg³aszanie b³êdów w ¶rodowisku GNOME
 Name:		bug-buddy
-Version:	2.2.0
-Release:	2
+Version:	2.2.99
+Release:	1
 License:	GPL
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/GNOME/2.0.0/releases/gnome-2.0-desktop-final/%{name}-%{version}.tar.bz2
+Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/2.2/%{name}-%{version}.tar.bz2
 URL:		http://www.gnome.org/
 BuildRequires:	scrollkeeper
 BuildRequires:	libgnomeui-devel
-BuildRequires:	gnome-vfs2-devel >= 1.9.1
+BuildRequires:	gnome-vfs2-devel >= 2.1.5
 BuildRequires:	libgnomecanvas-devel
 BuildRequires:	libglade2-devel
 BuildRequires:	libxml2-devel
@@ -39,12 +39,12 @@ KDE.
 %install
 rm -rf $RPM_BUILD_ROOT
 
-install -d $RPM_BUILD_ROOT%{_applnkdir}/Help
+#install -d $RPM_BUILD_ROOT%{_applnkdir}/Help
 
 %{__make} DESTDIR=$RPM_BUILD_ROOT install \
 	omf_dest_dir=%{_omf_dest_dir}/%{name}
 
-install src/*.desktop $RPM_BUILD_ROOT%{_applnkdir}/Help
+#install src/*.desktop $RPM_BUILD_ROOT%{_applnkdir}/Help
 
 %find_lang %{name} --with-gnome --all-name
 
@@ -61,7 +61,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/*
 %{_mandir}/man1/*
 
-%{_applnkdir}/*/*.desktop
+#%{_applnkdir}/*/*.desktop
 
 %{_datadir}/application-registry/*.*
 %{_datadir}/applications/*.*
