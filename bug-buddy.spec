@@ -14,6 +14,7 @@ BuildRequires:	libgnomecanvas-devel >= 2.4.0
 BuildRequires:	libgnomeui-devel
 BuildRequires:	libxml2-devel
 BuildRequires:	scrollkeeper
+BuildRequires:	gnome-desktop
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
