@@ -1,26 +1,26 @@
 Summary:	Utility to ease the reporting of bugs within the GNOME
 Summary(pl):	Narzêdzie u³atwiaj±ce zg³aszanie b³êdów w ¶rodowisku GNOME
 Name:		bug-buddy
-Version:	2.7.0
+Version:	2.7.91
 Release:	1
 License:	GPL
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/2.7/%{name}-%{version}.tar.bz2
-# Source0-md5:	5f841203853b285c06827ec1a0911f0a
+# Source0-md5:	54b0d38bd247004022e84e5a61f5e129
 Patch0:		%{name}-locale-names.patch
 URL:		http://www.gnome.org/
-BuildRequires:	GConf2-devel >= 2.7.1
+BuildRequires:	GConf2-devel >= 2.7.91
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	gtk+2-devel >= 2:2.4.0
-BuildRequires:	gnome-desktop-devel >= 2.7.1
-BuildRequires:	gnome-vfs2-devel >= 2.7.1
+BuildRequires:	gnome-desktop-devel >= 2.7.91
+BuildRequires:	gnome-vfs2-devel >= 2.7.91
 BuildRequires:	intltool >= 0.29
 BuildRequires:	libglade2-devel >= 1:2.3.6
-BuildRequires:	libgnomeui-devel >= 2.7.1
+BuildRequires:	libgnomeui-devel >= 2.7.91
 BuildRequires:	libxml2-devel >= 2.4.6
 BuildRequires:	scrollkeeper >= 0.3.8
-Requires(post):	GConf2 >= 2.7.1
+Requires(post):	GConf2 >= 2.7.91
 Requires(post):	scrollkeeper
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -41,7 +41,7 @@ KDE.
 %setup -q
 %patch0 -p1
 
-mv po/{no,nb}.po
+rm po/no.po
 
 %build
 glib-gettextize --copy --force
