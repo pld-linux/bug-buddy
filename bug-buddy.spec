@@ -1,19 +1,28 @@
 Summary:	Utility to ease the reporting of bugs within the GNOME
 Summary(pl):	Narzêdzie u³atwiaj±ce zg³aszanie b³êdów w ¶rodowisku GNOME
 Name:		bug-buddy
-Version:	2.4.1.1
+Version:	2.6.0
 Release:	1
 License:	GPL
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/2.4/%{name}-%{version}.tar.bz2
-# Source0-md5:	1f53b2e9b3967cafe5e3ae150dc0efc7
+Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/2.6/%{name}-%{version}.tar.bz2
+# Source0-md5:	27e9dfa28e7639a15a42c31794f0c510
+Patch0:		%{name}-locale-names.patch
 URL:		http://www.gnome.org/
-BuildRequires:	gnome-desktop-devel >= 2.4.0
-BuildRequires:	gnome-vfs2-devel >= 2.4.0
-BuildRequires:	libglade2-devel >= 2.0.1
-BuildRequires:	libgnomeui-devel >= 2.4.0
+BuildRequires:	GConf2-devel
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	glib2-devel >= 2.4.0
+BuildRequires:	gtk+2-devel >= 2:2.4.0
+BuildRequires:	gnome-desktop-devel >= 2.5.90
+BuildRequires:	gnome-vfs2-devel >= 2.6.0
+BuildRequires:	intltool >= 0.29
+BuildRequires:	libglade2-devel >= 2.3.6
+BuildRequires:	libgnomeui-devel >= 2.6.0
 BuildRequires:	libxml2-devel >= 2.4.6
 BuildRequires:	scrollkeeper >= 0.3.8
+Requires(post):	GConf2
+Requires(post):	scrollkeeper
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -31,23 +40,37 @@ KDE.
 
 %prep
 %setup -q
+%patch0 -p1
+
+mv po/{no,nb}.po
 
 %build
-%configure
+glib-gettextize --copy --force
+intltoolize --copy --force
+%{__aclocal}
+%{__autoconf}
+%{__automake}
+%configure \
+	--disable-schemas-install
+
 %{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
-	DESTDIR=$RPM_BUILD_ROOT
+	DESTDIR=$RPM_BUILD_ROOT \
+	GCONF_DISABLE_MAKEFILE_SCHEMA_INSTALL=1
 
 %find_lang %{name} --with-gnome --all-name
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%post   -p /usr/bin/scrollkeeper-update
+%post
+/usr/bin/scrollkeeper-update
+%gconf_schema_install
+
 %postun -p /usr/bin/scrollkeeper-update
 
 %files -f %{name}.lang
@@ -56,8 +79,9 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/*
 %{_mandir}/man1/*
 %{_datadir}/application-registry/*
-%{_datadir}/bug-buddy
+%{_datadir}/%{name}
 %{_datadir}/mime-info/*
 %{_desktopdir}/*
 %{_pixmapsdir}/*
 %{_omf_dest_dir}/*
+%{_sysconfdir}/gconf/schemas/*
