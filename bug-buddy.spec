@@ -1,12 +1,12 @@
 Summary:	Utility to ease the reporting of bugs within the GNOME
 Summary(pl):	Narzêdzie u³atwiaj±ce zg³aszanie b³êdów w ¶rodowisku GNOME
 Name:		bug-buddy
-Version:	2.3.3
+Version:	2.3.4
 Release:	1
 License:	GPL
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/2.3/%{name}-%{version}.tar.bz2
-# Source0-md5:	c59a4d7e0d6fb3bfeb9ae5eb3d328b75
+# Source0-md5:	a6b03f8b4393a60654e137c45aa5d55c
 URL:		http://www.gnome.org/
 BuildRequires:	gnome-vfs2-devel >= 2.2.0
 BuildRequires:	libglade2-devel
@@ -52,7 +52,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
-%doc AUTHORS ChangeLog NEWS README
+%doc AUTHORS ChangeLog NEWS README TODO docs/multiple_bts.txt
 %attr(755,root,root) %{_bindir}/*
 %{_mandir}/man1/*
 %{_datadir}/application-registry/*
