@@ -1,18 +1,21 @@
 Summary:	Utility to ease the reporting of bugs within the GNOME
 Summary(pl):	Narzêdzie u³atwiaj±ce zg³aszanie b³êdów w ¶rodowisku GNOME
 Name:		bug-buddy
-Version:	2.5.2
+Version:	2.5.3
 Release:	1
 License:	GPL
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/2.5/%{name}-%{version}.tar.bz2
-# Source0-md5:	d345ce541bdce6d14298cc3ce8058eff
+# Source0-md5:	95ccc3556a9d0f09cf857f6b2a524974
+Patch0:		%{name}-locale-names.patch
 URL:		http://www.gnome.org/
-BuildRequires:	intltool >= 0.28
+BuildRequires:	autoconf
+BuildRequires:	automake
 BuildRequires:	glib2-devel >= 2.3.1
 BuildRequires:	gtk+2-devel >= 2.3.1
 BuildRequires:	gnome-desktop-devel >= 2.5.1
 BuildRequires:	gnome-vfs2-devel >= 2.5.3
+BuildRequires:	intltool >= 0.29
 BuildRequires:	libglade2-devel >= 2.3.1
 BuildRequires:	libgnomeui-devel >= 2.5.1
 BuildRequires:	libxml2-devel >= 2.4.6
@@ -36,18 +39,27 @@ KDE.
 
 %prep
 %setup -q
+%patch0 -p1
+
+mv po/{no,nb}.po
 
 %build
 glib-gettextize --copy --force
 intltoolize --copy --force
-%configure
+%{__aclocal}
+%{__autoconf}
+%{__automake}
+%configure \
+	--disable-schemas-install
+
 %{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
-	DESTDIR=$RPM_BUILD_ROOT
+	DESTDIR=$RPM_BUILD_ROOT \
+	GCONF_DISABLE_MAKEFILE_SCHEMA_INSTALL=1
 
 %find_lang %{name} --with-gnome --all-name
 
