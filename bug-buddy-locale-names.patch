@@ -1,0 +1,12 @@
+diff -urN bug-buddy-2.6.0.orig/configure.in bug-buddy-2.6.0/configure.in
+--- bug-buddy-2.6.0.orig/configure.in	2004-03-22 19:10:28.823183400 +0100
++++ bug-buddy-2.6.0/configure.in	2004-03-22 19:10:41.890196912 +0100
+@@ -65,7 +65,7 @@
+ AC_SUBST(GETTEXT_PACKAGE)
+ AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE,"$GETTEXT_PACKAGE")
+ 
+-ALL_LINGUAS="am ar az be bg bn ca cs cy da de el en_CA en_GB es et eu fa fi fr ga gl he hi hr hu id it ja ko lt lv mk ml mn ms nl nn no pa pl pt pt_BR ro ru sk sl sq sr sr@Latn sv ta th tr uk vi wa zh_CN zh_TW"
++ALL_LINGUAS="am ar az be bg bn ca cs cy da de el en_CA en_GB es et eu fa fi fr ga gl he hi hr hu id it ja ko lt lv mk ml mn ms nb nl nn pa pl pt pt_BR ro ru sk sl sq sr sr@Latn sv ta th tr uk vi wa zh_CN zh_TW"
+ AM_GLIB_GNU_GETTEXT
+ 
+ AC_PATH_PROG(GLIB_GENMARSHAL, glib-genmarshal)
