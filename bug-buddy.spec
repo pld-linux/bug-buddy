@@ -8,10 +8,13 @@ Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/2.5/%{name}-%{version}.tar.bz2
 # Source0-md5:	7f79a7c3581bb4725b73138b221c4bdf
 URL:		http://www.gnome.org/
-BuildRequires:	gnome-desktop-devel >= 2.4.0
-BuildRequires:	gnome-vfs2-devel >= 2.4.0
-BuildRequires:	libglade2-devel >= 2.0.1
-BuildRequires:	libgnomeui-devel >= 2.4.0
+BuildRequires:	intltool >= 0.28
+BuildRequires:	glib2-devel >= 2.3.1
+BuildRequires:	gtk+2-devel >= 2.3.1
+BuildRequires:	gnome-desktop-devel >= 2.5.1
+BuildRequires:	gnome-vfs2-devel >= 2.5.3
+BuildRequires:	libglade2-devel >= 2.3.1
+BuildRequires:	libgnomeui-devel >= 2.5.1
 BuildRequires:	libxml2-devel >= 2.4.6
 BuildRequires:	scrollkeeper >= 0.3.8
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
