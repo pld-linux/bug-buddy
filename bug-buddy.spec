@@ -70,6 +70,7 @@ rm -r $RPM_BUILD_ROOT%{_datadir}/{application-registry,mime-info}
 rm -rf $RPM_BUILD_ROOT
 
 %post
+umask 022
 %gconf_schema_install /etc/gconf/schemas/bug-buddy.schemas
 /usr/bin/scrollkeeper-update -q
 /usr/bin/update-desktop-database
@@ -81,6 +82,7 @@ fi
 
 %postun
 if [ $1 = 0 ]; then
+	umask 022
 	/usr/bin/scrollkeeper-update -q
 	/usr/bin/update-desktop-database
 fi
