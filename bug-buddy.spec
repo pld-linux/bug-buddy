@@ -1,14 +1,13 @@
 Summary:	Utility to ease the reporting of bugs within the GNOME
 Summary(pl):	Narzêdzie u³atwiaj±ce zg³aszanie b³êdów w ¶rodowisku GNOME
 Name:		bug-buddy
-Version:	2.8.0
-Release:	3
+Version:	2.9.3
+Release:	1
 License:	GPL
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/2.8/%{name}-%{version}.tar.bz2
-# Source0-md5:	b4c90bb9e1762803d083026b000349ea
+Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/2.9/%{name}-%{version}.tar.bz2
+# Source0-md5:	f9d4c0643f91a1a14d529081c71c6676
 Patch0:		%{name}-desktop.patch
-Patch1:		%{name}-omf.patch
 URL:		http://www.gnome.org/
 BuildRequires:	GConf2-devel >= 2.7.92
 BuildRequires:	autoconf
@@ -41,7 +40,6 @@ KDE.
 %prep
 %setup -q
 %patch0 -p1
-%patch1 -p1
 
 %build
 glib-gettextize --copy --force
