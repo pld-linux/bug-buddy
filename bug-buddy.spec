@@ -20,6 +20,7 @@ BuildRequires:	intltool >= 0.33
 BuildRequires:	libglade2-devel >= 1:2.5.1
 BuildRequires:	libgnomeui-devel >= 2.10.0-2
 BuildRequires:	libxml2-devel >= 1:2.6.19
+BuildRequires:	rpmbuild(macros) >= 1.196
 BuildRequires:	scrollkeeper >= 0.3.8
 Requires(post,preun):	GConf2 >= 2.10.0
 Requires(post,postun):	desktop-file-utils
