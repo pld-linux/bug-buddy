@@ -1,27 +1,26 @@
 Summary:	Utility to ease the reporting of bugs within the GNOME
 Summary(pl):	Narzêdzie u³atwiaj±ce zg³aszanie b³êdów w ¶rodowisku GNOME
 Name:		bug-buddy
-Version:	2.6.1
+Version:	2.7.0
 Release:	1
 License:	GPL
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/2.6/%{name}-%{version}.tar.bz2
-# Source0-md5:	a9a8fb40fc762fb09ab587c2e0460653
+Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/2.7/%{name}-%{version}.tar.bz2
+# Source0-md5:	5f841203853b285c06827ec1a0911f0a
 Patch0:		%{name}-locale-names.patch
 URL:		http://www.gnome.org/
-BuildRequires:	GConf2-devel
+BuildRequires:	GConf2-devel >= 2.7.1
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	glib2-devel >= 2.4.0
 BuildRequires:	gtk+2-devel >= 2:2.4.0
-BuildRequires:	gnome-desktop-devel >= 2.6.0
-BuildRequires:	gnome-vfs2-devel >= 2.6.0
+BuildRequires:	gnome-desktop-devel >= 2.7.1
+BuildRequires:	gnome-vfs2-devel >= 2.7.1
 BuildRequires:	intltool >= 0.29
 BuildRequires:	libglade2-devel >= 1:2.3.6
-BuildRequires:	libgnomeui-devel >= 2.6.0
+BuildRequires:	libgnomeui-devel >= 2.7.1
 BuildRequires:	libxml2-devel >= 2.4.6
 BuildRequires:	scrollkeeper >= 0.3.8
-Requires(post):	GConf2
+Requires(post):	GConf2 >= 2.7.1
 Requires(post):	scrollkeeper
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
