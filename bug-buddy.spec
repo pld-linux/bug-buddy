@@ -2,7 +2,7 @@ Summary:	Utility to ease the reporting of bugs within the GNOME
 Summary(pl):	Narzêdzie u³atwiaj±ce zg³aszanie b³êdów w ¶rodowisku GNOME
 Name:		bug-buddy
 Version:	2.2.0
-Release:	1
+Release:	2
 License:	GPL
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/GNOME/2.0.0/releases/gnome-2.0-desktop-final/%{name}-%{version}.tar.bz2
@@ -15,12 +15,6 @@ BuildRequires:	libglade2-devel
 BuildRequires:	libxml2-devel
 Prereq:		scrollkeeper
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-
-%define		_prefix		/usr/X11R6
-%define		_mandir		%{_prefix}/man
-%define		_sysconfdir	/etc/X11/GNOME2
-%define		_localstatedir	/var
-%define		_omf_dest_dir	%(scrollkeeper-config --omfdir)
 
 %description
 bug-buddy is a druid based tool which steps you through the GNOME bug
