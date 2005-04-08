@@ -20,7 +20,7 @@ BuildRequires:	intltool >= 0.33
 BuildRequires:	libglade2-devel >= 1:2.5.1
 BuildRequires:	libgnomeui-devel >= 2.10.0-2
 BuildRequires:	libxml2-devel >= 1:2.6.19
-BuildRequires:	rpmbuild(macros) >= 1.196
+BuildRequires:	rpmbuild(macros) >= 1.197
 BuildRequires:	scrollkeeper >= 0.3.8
 Requires(post,preun):	GConf2 >= 2.10.0
 Requires(post,postun):	desktop-file-utils
@@ -45,8 +45,8 @@ KDE.
 %patch0 -p1
 
 %build
-glib-gettextize --copy --force
-intltoolize --copy --force
+%{__glib_gettextize}
+%{__intltoolize}
 %{__aclocal}
 %{__autoconf}
 %{__automake}
@@ -70,22 +70,16 @@ rm -r $RPM_BUILD_ROOT%{_datadir}/{application-registry,mime-info}
 rm -rf $RPM_BUILD_ROOT
 
 %post
-umask 022
-%gconf_schema_install /etc/gconf/schemas/bug-buddy.schemas
-/usr/bin/scrollkeeper-update -q
-/usr/bin/update-desktop-database
+%gconf_schema_install bug-buddy.schemas
+%scrollkeeper_update_post
+%update_desktop_database_post
 
 %preun
-if [ $1 = 0 ]; then
-	%gconf_schema_uninstall /etc/gconf/schemas/bug-buddy.schemas
-fi
+%gconf_schema_uninstall bug-buddy.schemas
 
 %postun
-if [ $1 = 0 ]; then
-	umask 022
-	/usr/bin/scrollkeeper-update -q
-	/usr/bin/update-desktop-database
-fi
+%scrollkeeper_update_postun
+%update_desktop_database_postun
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
