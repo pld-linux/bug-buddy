@@ -1,7 +1,23 @@
-diff -urN bug-buddy-2.8.0.orig/src/bug-buddy.desktop.in.in bug-buddy-2.8.0/src/bug-buddy.desktop.in.in
---- bug-buddy-2.8.0.orig/src/bug-buddy.desktop.in.in	2004-11-30 14:45:20.269965376 +0100
-+++ bug-buddy-2.8.0/src/bug-buddy.desktop.in.in	2004-11-30 14:47:59.111817744 +0100
-@@ -6,7 +6,7 @@
+diff -urN bug-buddy-2.10.0/src/bug-buddy-core.desktop.in.in bug-buddy-2.10.0.new/src/bug-buddy-core.desktop.in.in
+--- bug-buddy-2.10.0/src/bug-buddy-core.desktop.in.in	2004-09-12 01:20:22.000000000 +0200
++++ bug-buddy-2.10.0.new/src/bug-buddy-core.desktop.in.in	2005-05-25 20:12:48.000000000 +0200
+@@ -6,6 +6,7 @@
+ Icon=bug-buddy.png
+ Terminal=false
+ Type=Application
++Categories=GTK;GNOME;Development;
+ StartupNotify=true
+ NoDisplay=true
+ X-GNOME-Bugzilla-Bugzilla=GNOME
+@@ -13,3 +14,4 @@
+ X-GNOME-Bugzilla-Component=general
+ X-GNOME-Bugzilla-Version=@VERSION@
+ MimeType=application/x-core;
++# vi: encoding=utf-8
+diff -urN bug-buddy-2.10.0/src/bug-buddy.desktop.in.in bug-buddy-2.10.0.new/src/bug-buddy.desktop.in.in
+--- bug-buddy-2.10.0/src/bug-buddy.desktop.in.in	2004-09-12 01:20:22.000000000 +0200
++++ bug-buddy-2.10.0.new/src/bug-buddy.desktop.in.in	2005-05-25 20:13:24.000000000 +0200
+@@ -6,9 +6,10 @@
  Icon=bug-buddy.png
  Terminal=false
  Type=Application
@@ -10,3 +26,6 @@ diff -urN bug-buddy-2.8.0.orig/src/bug-buddy.desktop.in.in bug-buddy-2.8.0/src/b
  StartupNotify=true
  X-GNOME-Bugzilla-Bugzilla=GNOME
  X-GNOME-Bugzilla-Product=bug-buddy
+ X-GNOME-Bugzilla-Component=general
+ X-GNOME-Bugzilla-Version=@VERSION@
++# vi: encoding=utf-8
