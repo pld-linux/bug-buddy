@@ -12,6 +12,7 @@ URL:		http://www.gnome.org/
 BuildRequires:	GConf2-devel >= 2.10.0
 BuildRequires:	autoconf
 BuildRequires:	automake
+BuildRequires:	gettext-devel
 BuildRequires:	gnome-desktop-devel >= 2.10.0-2
 BuildRequires:	gnome-doc-utils >= 0.2.0
 BuildRequires:	gnome-menus-devel >= 2.10.1
@@ -22,6 +23,7 @@ BuildRequires:	libglade2-devel >= 1:2.5.1
 BuildRequires:	libgnomeui-devel >= 2.10.0-2
 BuildRequires:	libxml2-devel >= 1:2.6.19
 BuildRequires:	libxslt-progs >= 1.1.14
+BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.197
 BuildRequires:	scrollkeeper >= 0.3.8
 Requires(post,preun):	GConf2 >= 2.10.0
