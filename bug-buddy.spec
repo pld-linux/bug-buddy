@@ -1,12 +1,12 @@
 Summary:	Utility to ease the reporting of bugs within the GNOME
 Summary(pl):	Narzêdzie u³atwiaj±ce zg³aszanie b³êdów w ¶rodowisku GNOME
 Name:		bug-buddy
-Version:	2.10.0
-Release:	5
+Version:	2.11.0
+Release:	1
 License:	GPL v2
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/gnome/sources/bug-buddy/2.10/%{name}-%{version}.tar.bz2
-# Source0-md5:	c821a933f3d7be64071c7bfcb07ee1ac
+Source0:	http://ftp.gnome.org/pub/gnome/sources/bug-buddy/2.11/%{name}-%{version}.tar.bz2
+# Source0-md5:	c86fb5a8949d27c481b7fe54844cb19f
 Patch0:		%{name}-desktop.patch
 URL:		http://www.gnome.org/
 BuildRequires:	GConf2-devel >= 2.10.0
@@ -14,7 +14,7 @@ BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	gettext-devel
 BuildRequires:	gnome-desktop-devel >= 2.10.0-2
-BuildRequires:	gnome-doc-utils >= 0.2.0
+BuildRequires:	gnome-doc-utils >= 0.3.1
 BuildRequires:	gnome-menus-devel >= 2.10.1
 BuildRequires:	gnome-vfs2-devel >= 2.10.0-2
 BuildRequires:	gtk+2-devel >= 2:2.6.4
@@ -51,11 +51,13 @@ KDE.
 %build
 %{__glib_gettextize}
 %{__intltoolize}
+%{__gnome_doc_common}
 %{__aclocal}
 %{__autoconf}
 %{__automake}
 %configure \
-	--disable-schemas-install
+	--disable-schemas-install \
+	--disable-scrollkeeper
 %{__make}
 
 %install
