@@ -1,12 +1,12 @@
 Summary:	Utility to ease the reporting of bugs within the GNOME
 Summary(pl):	Narzêdzie u³atwiaj±ce zg³aszanie b³êdów w ¶rodowisku GNOME
 Name:		bug-buddy
-Version:	2.11.0
+Version:	2.11.1
 Release:	1
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/gnome/sources/bug-buddy/2.11/%{name}-%{version}.tar.bz2
-# Source0-md5:	c86fb5a8949d27c481b7fe54844cb19f
+# Source0-md5:	490f9b8f63119bafd19a37a0f0719b65
 Patch0:		%{name}-desktop.patch
 URL:		http://www.gnome.org/
 BuildRequires:	GConf2-devel >= 2.10.0
