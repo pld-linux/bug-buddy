@@ -1,12 +1,12 @@
 Summary:	Utility to ease the reporting of bugs within the GNOME
 Summary(pl):	Narzêdzie u³atwiaj±ce zg³aszanie b³êdów w ¶rodowisku GNOME
 Name:		bug-buddy
-Version:	2.11.1
-Release:	2
+Version:	2.11.92
+Release:	1
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/gnome/sources/bug-buddy/2.11/%{name}-%{version}.tar.bz2
-# Source0-md5:	490f9b8f63119bafd19a37a0f0719b65
+# Source0-md5:	fd6affcdb1a205b2acfc866eb4844c4a
 Patch0:		%{name}-desktop.patch
 URL:		http://www.gnome.org/
 BuildRequires:	GConf2-devel >= 2.11.90-2
@@ -91,9 +91,9 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README TODO docs/multiple_bts.txt
 %attr(755,root,root) %{_bindir}/*
-%{_mandir}/man1/*
 %{_datadir}/%{name}
 %{_desktopdir}/*
-%{_pixmapsdir}/*
+%{_mandir}/man1/*
 %{_omf_dest_dir}/*
-%{_sysconfdir}/gconf/schemas/*
+%{_pixmapsdir}/*
+%{_sysconfdir}/gconf/schemas/bug-buddy.schemas
