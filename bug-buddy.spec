@@ -1,30 +1,32 @@
 Summary:	Utility to ease the reporting of bugs within the GNOME
 Summary(pl):	Narzêdzie u³atwiaj±ce zg³aszanie b³êdów w ¶rodowisku GNOME
 Name:		bug-buddy
-Version:	2.10.0
-Release:	4
+Version:	2.14.0
+Release:	1
 License:	GPL v2
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/gnome/sources/bug-buddy/2.10/%{name}-%{version}.tar.bz2
-# Source0-md5:	c821a933f3d7be64071c7bfcb07ee1ac
+Source0:	http://ftp.gnome.org/pub/gnome/sources/bug-buddy/2.14/%{name}-%{version}.tar.bz2
+# Source0-md5:	4fb288adc8f67cbfb8886ddf7b400530
 Patch0:		%{name}-desktop.patch
 URL:		http://www.gnome.org/
-BuildRequires:	GConf2-devel >= 2.10.0
+BuildRequires:	GConf2-devel >= 2.12.0
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	gnome-desktop-devel >= 2.10.0-2
-BuildRequires:	gnome-doc-utils >= 0.2.0
-BuildRequires:	gnome-menus-devel >= 2.10.1
-BuildRequires:	gnome-vfs2-devel >= 2.10.0-2
-BuildRequires:	gtk+2-devel >= 2:2.6.4
+BuildRequires:	gettext-devel
+BuildRequires:	gnome-desktop-devel >= 2.12.0
+BuildRequires:	gnome-doc-utils >= 0.4.1
+BuildRequires:	gnome-menus-devel >= 2.12.0
+BuildRequires:	gnome-vfs2-devel >= 2.12.0
+BuildRequires:	gtk+2-devel >= 2:2.8.3
 BuildRequires:	intltool >= 0.33
 BuildRequires:	libglade2-devel >= 1:2.5.1
-BuildRequires:	libgnomeui-devel >= 2.10.0-2
-BuildRequires:	libxml2-devel >= 1:2.6.19
-BuildRequires:	libxslt-progs >= 1.1.14
+BuildRequires:	libgnomeui-devel >= 2.12.0
+BuildRequires:	libxml2-devel >= 1:2.6.21
+BuildRequires:	libxslt-progs >= 1.1.15
+BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.197
 BuildRequires:	scrollkeeper >= 0.3.8
-Requires(post,preun):	GConf2 >= 2.10.0
+Requires(post,preun):	GConf2 >= 2.12.0
 Requires(post,postun):	desktop-file-utils
 Requires(post,postun):	scrollkeeper
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -49,11 +51,13 @@ KDE.
 %build
 %{__glib_gettextize}
 %{__intltoolize}
+%{__gnome_doc_common}
 %{__aclocal}
 %{__autoconf}
 %{__automake}
 %configure \
-	--disable-schemas-install
+	--disable-schemas-install \
+	--disable-scrollkeeper
 %{__make}
 
 %install
@@ -87,9 +91,9 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README TODO docs/multiple_bts.txt
 %attr(755,root,root) %{_bindir}/*
-%{_mandir}/man1/*
 %{_datadir}/%{name}
 %{_desktopdir}/*
-%{_pixmapsdir}/*
+%{_mandir}/man1/*
 %{_omf_dest_dir}/*
-%{_sysconfdir}/gconf/schemas/*
+%{_pixmapsdir}/*
+%{_sysconfdir}/gconf/schemas/bug-buddy.schemas
