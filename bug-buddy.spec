@@ -1,8 +1,11 @@
+# TODO
+# fix stupid .desktop breakage
+#
 Summary:	Utility to ease the reporting of bugs within the GNOME
 Summary(pl):	Narzêdzie u³atwiaj±ce zg³aszanie b³êdów w ¶rodowisku GNOME
 Name:		bug-buddy
 Version:	2.15.90
-Release:	1
+Release:	2
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/gnome/sources/bug-buddy/2.15/%{name}-%{version}.tar.bz2
@@ -12,6 +15,7 @@ URL:		http://www.gnome.org/
 BuildRequires:	GConf2-devel >= 2.14.0
 BuildRequires:	autoconf
 BuildRequires:	automake
+BuildRequires:	evolution-data-server-devel >= 1.7.90.1
 BuildRequires:	gettext-devel
 BuildRequires:	gnome-desktop-devel >= 2.15.90
 BuildRequires:	gnome-doc-utils >= 0.7.1
@@ -21,6 +25,7 @@ BuildRequires:	gtk+2-devel >= 2:2.10.1
 BuildRequires:	intltool >= 0.35
 BuildRequires:	libglade2-devel >= 1:2.6.0
 BuildRequires:	libgnomeui-devel >= 2.15.90
+BuildRequires:	libgtop-devel >= 2.14.2
 BuildRequires:	libxml2-devel >= 1:2.6.26
 BuildRequires:	libxslt-progs >= 1.1.17
 BuildRequires:	pkgconfig
