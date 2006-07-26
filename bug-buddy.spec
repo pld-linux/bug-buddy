@@ -25,7 +25,7 @@ BuildRequires:	gtk+2-devel >= 2:2.10.1
 BuildRequires:	intltool >= 0.35
 BuildRequires:	libglade2-devel >= 1:2.6.0
 BuildRequires:	libgnomeui-devel >= 2.15.90
-BuildRequires:	libgtop-devel >= 2.14.2
+BuildRequires:	libgtop-devel >= 2.14.1
 BuildRequires:	libxml2-devel >= 1:2.6.26
 BuildRequires:	libxslt-progs >= 1.1.17
 BuildRequires:	pkgconfig
