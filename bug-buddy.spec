@@ -1,39 +1,39 @@
 Summary:	Utility to ease the reporting of bugs within the GNOME
 Summary(pl):	Narzêdzie u³atwiaj±ce zg³aszanie b³êdów w ¶rodowisku GNOME
 Name:		bug-buddy
-Version:	2.16.0
+Version:	2.16.1
 Release:	1
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/gnome/sources/bug-buddy/2.16/%{name}-%{version}.tar.bz2
-# Source0-md5:	199b8fe6454096b1c8e514eaa925caa3
+# Source0-md5:	c15641ebfd90a91f185179d67bde88e3
 Patch0:		%{name}-desktop.patch
 URL:		http://www.gnome.org/
-BuildRequires:	GConf2-devel >= 2.14.0
+BuildRequires:	GConf2-devel >= 2.16.0
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	evolution-data-server-devel >= 1.8.0
+BuildRequires:	evolution-data-server-devel >= 1.8.1
 BuildRequires:	gettext-devel
-BuildRequires:	gnome-desktop-devel >= 2.16.0
+BuildRequires:	gnome-desktop-devel >= 2.16.2
 BuildRequires:	gnome-doc-utils >= 0.8.0
-BuildRequires:	gnome-menus-devel >= 2.16.0
-BuildRequires:	gnome-vfs2-devel >= 2.16.0
-BuildRequires:	gtk+2-devel >= 2:2.10.3
-BuildRequires:	intltool >= 0.35
+BuildRequires:	gnome-menus-devel >= 2.16.1
+BuildRequires:	gnome-vfs2-devel >= 2.16.3
+BuildRequires:	gtk+2-devel >= 2:2.10.6
+BuildRequires:	intltool >= 0.35.0
 BuildRequires:	libglade2-devel >= 1:2.6.0
-BuildRequires:	libgnomeui-devel >= 2.16.0
-BuildRequires:	libgtop-devel >= 2.14.3
-BuildRequires:	libxml2-devel >= 1:2.6.26
+BuildRequires:	libgnomeui-devel >= 2.16.1
+BuildRequires:	libgtop-devel >= 2.14.4
+BuildRequires:	libxml2-devel >= 1:2.6.27
 BuildRequires:	libxslt-progs >= 1.1.17
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.311
 BuildRequires:	scrollkeeper >= 0.3.8
-Requires(post,preun):	GConf2 >= 2.14.0
+Requires(post,preun):	GConf2 >= 2.16.0
 Requires(post,postun):	desktop-file-utils
-Requires(post,postun):	gtk+2 >= 2:2.10.3
+Requires(post,postun):	gtk+2 >= 2:2.10.6
 Requires(post,postun):	hicolor-icon-theme
 Requires(post,postun):	scrollkeeper
-Requires:	libgnomeui >= 2.16.0
+Requires:	libgnomeui >= 2.16.1
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
