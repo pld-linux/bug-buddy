@@ -1,5 +1,5 @@
 Summary:	Utility to ease the reporting of bugs within the GNOME
-Summary(pl.UTF-8):   Narzędzie ułatwiające zgłaszanie błędów w środowisku GNOME
+Summary(pl.UTF-8):	Narzędzie ułatwiające zgłaszanie błędów w środowisku GNOME
 Name:		bug-buddy
 Version:	2.16.1
 Release:	1
