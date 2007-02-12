@@ -1,5 +1,5 @@
 Summary:	Utility to ease the reporting of bugs within the GNOME
-Summary(pl):	Narzêdzie u³atwiaj±ce zg³aszanie b³êdów w ¶rodowisku GNOME
+Summary(pl.UTF-8):   NarzÄ™dzie uÅ‚atwiajÄ…ce zgÅ‚aszanie bÅ‚Ä™dÃ³w w Å›rodowisku GNOME
 Name:		bug-buddy
 Version:	2.16.1
 Release:	1
@@ -42,11 +42,11 @@ submission process. It can automatically obtain stack traces from core
 files or crashed applications. Debian and KDE bug tracking systems are
 also supported.
 
-%description -l pl
-bug-budy jest narzêdziem przeprowadzaj±cym Ciê przez proces sk³adania
-raportu o b³êdzie w ¶rodowisku GNOME. Potrafi on automatycznie uzyskaæ
-¶lady ze stosu (backtrace) z plików core lub wywracaj±cych siê
-aplikacji. Wspierane s± równie¿ systemy obs³ugi b³êdów Debiana oraz
+%description -l pl.UTF-8
+bug-budy jest narzÄ™dziem przeprowadzajÄ…cym CiÄ™ przez proces skÅ‚adania
+raportu o bÅ‚Ä™dzie w Å›rodowisku GNOME. Potrafi on automatycznie uzyskaÄ‡
+Å›lady ze stosu (backtrace) z plikÃ³w core lub wywracajÄ…cych siÄ™
+aplikacji. Wspierane sÄ… rÃ³wnieÅ¼ systemy obsÅ‚ugi bÅ‚Ä™dÃ³w Debiana oraz
 KDE.
 
 %prep
