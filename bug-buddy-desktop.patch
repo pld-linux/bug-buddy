@@ -5,7 +5,7 @@ diff -urN bug-buddy-2.16.1/src/bug-buddy.desktop.in.in bug-buddy-2.16.1.new/src/
  Icon=bug-buddy
  Terminal=false
  Type=Application
--Categories=GNOME;GTK;Application;Development;
+-Categories=GNOME;GTK;Development;
 +Categories=GTK;GNOME;Development;
  StartupNotify=true
  NoDisplay=true
