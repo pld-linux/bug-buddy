@@ -1,12 +1,12 @@
 Summary:	Utility to ease the reporting of bugs within the GNOME
 Summary(pl.UTF-8):	Narzędzie ułatwiające zgłaszanie błędów w środowisku GNOME
 Name:		bug-buddy
-Version:	2.18.1
+Version:	2.19.91
 Release:	1
 License:	GPL v2
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/gnome/sources/bug-buddy/2.18/%{name}-%{version}.tar.bz2
-# Source0-md5:	ebeaeee4acc1432b59a4ef242abff620
+Source0:	http://ftp.gnome.org/pub/gnome/sources/bug-buddy/2.19/%{name}-%{version}.tar.bz2
+# Source0-md5:	cef28e1659ecf64796bde161d47159bd
 Patch0:		%{name}-desktop.patch
 URL:		http://www.gnome.org/
 BuildRequires:	GConf2-devel >= 2.18.0.1
@@ -78,6 +78,7 @@ rm -rf $RPM_BUILD_ROOT
 rm -rf $RPM_BUILD_ROOT
 
 %post
+/sbin/ldconfig
 %gconf_schema_install bug-buddy.schemas
 %scrollkeeper_update_post
 %update_desktop_database_post
@@ -87,6 +88,7 @@ rm -rf $RPM_BUILD_ROOT
 %gconf_schema_uninstall bug-buddy.schemas
 
 %postun
+/sbin/ldconfig
 %scrollkeeper_update_postun
 %update_desktop_database_postun
 %update_icon_cache hicolor
@@ -95,6 +97,8 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README TODO
 %attr(755,root,root) %{_bindir}/*
+%attr(755,root,root) %{_libdir}/libbreakpad.so.*.*
+%attr(755,root,root) %{_libdir}/gtk-2.0/modules/libgnomebreakpad.so.*.*
 %{_datadir}/%{name}
 %{_desktopdir}/*.desktop
 %{_iconsdir}/hicolor/*/*/bug-buddy.png
