@@ -101,8 +101,9 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README TODO
 %attr(755,root,root) %{_bindir}/*
-%attr(755,root,root) %{_libdir}/libbreakpad.so.*.*
-%attr(755,root,root) %{_libdir}/gtk-2.0/modules/libgnomebreakpad.so.*.*
+%attr(755,root,root) %{_libdir}/libbreakpad.so.*.*.*
+%attr(755,root,root) %{_libdir}/gtk-2.0/modules/libgnomebreakpad.so.*.*.*
+%attr(755,root,root) %{_libdir}/gtk-2.0/modules/libgnomebreakpad.so
 %{_datadir}/%{name}
 %{_desktopdir}/*.desktop
 %{_iconsdir}/hicolor/*/*/bug-buddy.png
