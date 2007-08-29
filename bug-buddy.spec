@@ -9,21 +9,21 @@ Source0:	http://ftp.gnome.org/pub/gnome/sources/bug-buddy/2.19/%{name}-%{version
 # Source0-md5:	cef28e1659ecf64796bde161d47159bd
 Patch0:		%{name}-desktop.patch
 URL:		http://www.gnome.org/
-BuildRequires:	GConf2-devel >= 2.18.0.1
+BuildRequires:	GConf2-devel >= 2.19.1
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	evolution-data-server-devel >= 1.10.0
+BuildRequires:	evolution-data-server-devel >= 1.11.91
 BuildRequires:	gettext-devel
-BuildRequires:	gnome-desktop-devel >= 2.18.0
-BuildRequires:	gnome-doc-utils >= 0.10.1
-BuildRequires:	gnome-menus-devel >= 2.18.0
-BuildRequires:	gnome-vfs2-devel >= 2.18.0.1
-BuildRequires:	gtk+2-devel >= 2:2.10.10
-BuildRequires:	intltool >= 0.35.5
-BuildRequires:	libglade2-devel >= 1:2.6.0
-BuildRequires:	libgnomeui-devel >= 2.18.1
+BuildRequires:	gnome-desktop-devel >= 2.19.90
+BuildRequires:	gnome-doc-utils >= 0.11.2
+BuildRequires:	gnome-menus-devel >= 2.19.90
+BuildRequires:	gnome-vfs2-devel >= 2.19.91
+BuildRequires:	gtk+2-devel >= 2:2.10.14
+BuildRequires:	intltool >= 0.36.1
+BuildRequires:	libglade2-devel >= 1:2.6.2
+BuildRequires:	libgnomeui-devel >= 2.19.1
 BuildRequires:	libgtop-devel >= 2.14.8
-BuildRequires:	libxml2-devel >= 1:2.6.27
+BuildRequires:	libxml2-devel >= 1:2.6.29
 BuildRequires:	libxslt-progs >= 1.1.20
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.311
@@ -33,7 +33,7 @@ Requires(post,postun):	gtk+2
 Requires(post,postun):	hicolor-icon-theme
 Requires(post,postun):	scrollkeeper
 Requires(post,preun):	GConf2
-Requires:	libgnomeui >= 2.18.1
+Requires:	libgnomeui >= 2.19.1
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -71,6 +71,10 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT \
 	GCONF_DISABLE_MAKEFILE_SCHEMA_INSTALL=1
+
+rm -rf $RPM_BUILD_ROOT%{_libdir}/gtk-2.0/modules/libgnomebreakpad.{l,}a
+rm -rf $RPM_BUILD_ROOT%{_libdir}/libbreakpad.{l,}a
+rm -rf $RPM_BUILD_ROOT%{_docdir}/breakpad-0.1
 
 %find_lang %{name} --with-gnome --all-name
 
