@@ -2,7 +2,7 @@ Summary:	Utility to ease the reporting of bugs within the GNOME
 Summary(pl.UTF-8):	Narzędzie ułatwiające zgłaszanie błędów w środowisku GNOME
 Name:		bug-buddy
 Version:	2.20.0
-Release:	1
+Release:	2
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/bug-buddy/2.20/%{name}-%{version}.tar.bz2
@@ -72,6 +72,7 @@ rm -rf $RPM_BUILD_ROOT
 	DESTDIR=$RPM_BUILD_ROOT \
 	GCONF_DISABLE_MAKEFILE_SCHEMA_INSTALL=1
 
+mv $RPM_BUILD_ROOT%{_libdir}/gtk-2.0/modules/libgnomebreakpad.so{.*.*.*,}
 rm -rf $RPM_BUILD_ROOT%{_libdir}/gtk-2.0/modules/libgnomebreakpad.{l,}a
 rm -rf $RPM_BUILD_ROOT%{_libdir}/bug-buddy/libbreakpad.{l,}a
 rm -rf $RPM_BUILD_ROOT%{_docdir}/breakpad-0.1
@@ -101,9 +102,10 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README TODO
 %attr(755,root,root) %{_bindir}/*
+%ifarch %{ix86}
 %dir %{_libdir}/bug-buddy
 %attr(755,root,root) %{_libdir}/bug-buddy/libbreakpad.so.*.*.*
-%attr(755,root,root) %{_libdir}/gtk-2.0/modules/libgnomebreakpad.so.*.*.*
+%endif
 %attr(755,root,root) %{_libdir}/gtk-2.0/modules/libgnomebreakpad.so
 %{_datadir}/%{name}
 %{_desktopdir}/*.desktop
