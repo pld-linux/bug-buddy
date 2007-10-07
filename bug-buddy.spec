@@ -1,15 +1,15 @@
 Summary:	Utility to ease the reporting of bugs within the GNOME
 Summary(pl.UTF-8):	Narzędzie ułatwiające zgłaszanie błędów w środowisku GNOME
 Name:		bug-buddy
-Version:	2.20.0
-Release:	2
+Version:	2.20.1
+Release:	1
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/bug-buddy/2.20/%{name}-%{version}.tar.bz2
-# Source0-md5:	bce8b08a14d123ecfeefb3902031d773
+# Source0-md5:	6b9ea4c067674120bd93711b3b9a9e63
 Patch0:		%{name}-desktop.patch
 URL:		http://www.gnome.org/
-BuildRequires:	GConf2-devel >= 2.19.1
+BuildRequires:	GConf2-devel >= 2.20.0
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	evolution-data-server-devel >= 1.12.0
@@ -21,7 +21,7 @@ BuildRequires:	gnome-vfs2-devel >= 2.20.0
 BuildRequires:	gtk+2-devel >= 2:2.12.0
 BuildRequires:	intltool >= 0.36.2
 BuildRequires:	libglade2-devel >= 1:2.6.2
-BuildRequires:	libgnomeui-devel >= 2.19.1
+BuildRequires:	libgnomeui-devel >= 2.20.0
 BuildRequires:	libgtop-devel >= 2.14.8
 BuildRequires:	libxml2-devel >= 1:2.6.30
 BuildRequires:	libxslt-progs >= 1.1.20
@@ -33,7 +33,7 @@ Requires(post,postun):	gtk+2
 Requires(post,postun):	hicolor-icon-theme
 Requires(post,postun):	scrollkeeper
 Requires(post,preun):	GConf2
-Requires:	libgnomeui >= 2.19.1
+Requires:	libgnomeui >= 2.20.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -72,7 +72,6 @@ rm -rf $RPM_BUILD_ROOT
 	DESTDIR=$RPM_BUILD_ROOT \
 	GCONF_DISABLE_MAKEFILE_SCHEMA_INSTALL=1
 
-mv $RPM_BUILD_ROOT%{_libdir}/gtk-2.0/modules/libgnomebreakpad.so{.*.*.*,}
 rm -rf $RPM_BUILD_ROOT%{_libdir}/gtk-2.0/modules/libgnomebreakpad.{l,}a
 rm -rf $RPM_BUILD_ROOT%{_libdir}/bug-buddy/libbreakpad.{l,}a
 rm -rf $RPM_BUILD_ROOT%{_docdir}/breakpad-0.1
