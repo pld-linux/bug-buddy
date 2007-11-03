@@ -2,7 +2,7 @@ Summary:	Utility to ease the reporting of bugs within the GNOME
 Summary(pl.UTF-8):	Narzędzie ułatwiające zgłaszanie błędów w środowisku GNOME
 Name:		bug-buddy
 Version:	2.20.1
-Release:	1
+Release:	2
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/bug-buddy/2.20/%{name}-%{version}.tar.bz2
@@ -34,6 +34,8 @@ Requires(post,postun):	hicolor-icon-theme
 Requires(post,postun):	scrollkeeper
 Requires(post,preun):	GConf2
 Requires:	libgnomeui >= 2.20.0
+# sr@Latn vs. sr@latin
+Conflicts:	glibc-misc < 6:2.7
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -76,6 +78,8 @@ rm -rf $RPM_BUILD_ROOT%{_libdir}/gtk-2.0/modules/libgnomebreakpad.{l,}a
 rm -rf $RPM_BUILD_ROOT%{_libdir}/bug-buddy/libbreakpad.{l,}a
 rm -rf $RPM_BUILD_ROOT%{_docdir}/breakpad-0.1
 
+[ -d $RPM_BUILD_ROOT%{_datadir}/locale/sr@latin ] || \
+	mv -f $RPM_BUILD_ROOT%{_datadir}/locale/sr@{Latn,latin}
 %find_lang %{name} --with-gnome --all-name
 
 %clean
