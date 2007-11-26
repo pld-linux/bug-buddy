@@ -14,6 +14,7 @@ BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	evolution-data-server-devel >= 1.12.0
 BuildRequires:	gettext-devel
+BuildRequires:	gnome-common
 BuildRequires:	gnome-desktop-devel >= 2.20.0
 BuildRequires:	gnome-doc-utils >= 0.12.0
 BuildRequires:	gnome-menus-devel >= 2.20.0
