@@ -1,0 +1,11 @@
+diff -urN bug-buddy-2.21.90/src/distribution.c bug-buddy-2.21.90.new/src/distribution.c
+--- bug-buddy-2.21.90/src/distribution.c	2007-10-13 16:42:41.000000000 +0200
++++ bug-buddy-2.21.90.new/src/distribution.c	2008-02-06 17:54:30.000000000 +0100
+@@ -86,6 +86,7 @@
+ 	{ "Fedora",        "/etc/fedora-release",     &redhat_phy },
+ 	{ "Gentoo",        "/etc/gentoo-release",     &redhat_phy },
+ 	{ "Solaris",       "/etc/release",  	      &redhat_phy },
++	{ "PLD Linux",     "/etc/pld-release",        &redhat_phy },
+ 	{ "LSB Linux",     "/etc/lsb-release",        &lsb_phy },
+ 	{ "Debian",        "/etc/debian_version",     &debian_phy },
+ 	{ "IRIX Freeware", "/bin/hinv",               &irix_phy },
