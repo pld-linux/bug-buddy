@@ -2,7 +2,7 @@ Summary:	Utility to ease the reporting of bugs within the GNOME
 Summary(pl.UTF-8):	Narzędzie ułatwiające zgłaszanie błędów w środowisku GNOME
 Name:		bug-buddy
 Version:	2.22.0
-Release:	1
+Release:	2
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/bug-buddy/2.22/%{name}-%{version}.tar.bz2
@@ -105,9 +105,9 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README TODO
 %attr(755,root,root) %{_bindir}/bug-buddy
+%ifarch %{ix86}
 %attr(755,root,root) %{_bindir}/minidump_dump
 %attr(755,root,root) %{_bindir}/minidump_stackwalk
-%ifarch %{ix86}
 %dir %{_libdir}/bug-buddy
 %attr(755,root,root) %{_libdir}/bug-buddy/libbreakpad.so*
 %endif
