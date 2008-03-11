@@ -1,30 +1,30 @@
 Summary:	Utility to ease the reporting of bugs within the GNOME
 Summary(pl.UTF-8):	Narzędzie ułatwiające zgłaszanie błędów w środowisku GNOME
 Name:		bug-buddy
-Version:	2.21.90
+Version:	2.22.0
 Release:	1
 License:	GPL v2
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/bug-buddy/2.21/%{name}-%{version}.tar.bz2
-# Source0-md5:	9aafadf36d64c4794d1422d26980af05
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/bug-buddy/2.22/%{name}-%{version}.tar.bz2
+# Source0-md5:	092e1f91d0be4ca133cd0650622a6b06
 Patch0:		%{name}-pld.patch
 URL:		http://www.gnome.org/
-BuildRequires:	GConf2-devel >= 2.21.90
+BuildRequires:	GConf2-devel >= 2.22.0
 BuildRequires:	autoconf
 BuildRequires:	automake >= 1:1.9
 BuildRequires:	elfutils-devel
-BuildRequires:	evolution-data-server-devel >= 2.21.90
+BuildRequires:	evolution-data-server-devel >= 2.22.0
 BuildRequires:	gettext-devel
 BuildRequires:	gnome-common
-BuildRequires:	gnome-desktop-devel >= 2.21.90
+BuildRequires:	gnome-desktop-devel >= 2.22.0
 BuildRequires:	gnome-doc-utils >= 0.12.0
-BuildRequires:	gnome-menus-devel >= 2.21.90
-BuildRequires:	gnome-vfs2-devel >= 2.20.0
+BuildRequires:	gnome-menus-devel >= 2.22.0
+BuildRequires:	gnome-vfs2-devel >= 2.22.0
 BuildRequires:	gtk+2-devel >= 2:2.12.5
 BuildRequires:	intltool >= 0.37.0
-BuildRequires:	libgnomeui-devel >= 2.21.90
+BuildRequires:	libgnomeui-devel >= 2.22.0
 BuildRequires:	libgtop-devel >= 2.14.8
-BuildRequires:	libsoup-devel >= 2.3.0.1
+BuildRequires:	libsoup-devel >= 2.4.0
 BuildRequires:	libtool
 BuildRequires:	libxml2-devel >= 1:2.6.31
 BuildRequires:	pkgconfig
@@ -35,7 +35,7 @@ Requires(post,postun):	gtk+2
 Requires(post,postun):	hicolor-icon-theme
 Requires(post,preun):	GConf2
 Requires:	gtk+2 >= 2:2.12.5
-Requires:	libgnomeui >= 2.21.90
+Requires:	libgnomeui >= 2.22.0
 # sr@Latn vs. sr@latin
 Conflicts:	glibc-misc < 6:2.7
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
