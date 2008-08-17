@@ -1,27 +1,27 @@
 Summary:	Utility to ease the reporting of bugs within the GNOME
 Summary(pl.UTF-8):	Narzędzie ułatwiające zgłaszanie błędów w środowisku GNOME
 Name:		bug-buddy
-Version:	2.23.6
+Version:	2.23.90
 Release:	1
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/bug-buddy/2.23/%{name}-%{version}.tar.bz2
-# Source0-md5:	b9a49490c3503c04976ebd79d40afa51
+# Source0-md5:	93f81f9549471e07531b7d38fdc61439
 URL:		http://www.gnome.org/
-BuildRequires:	GConf2-devel >= 2.22.0
+BuildRequires:	GConf2-devel >= 2.23.0
 BuildRequires:	autoconf
 BuildRequires:	automake >= 1:1.9
 BuildRequires:	elfutils-devel
 BuildRequires:	evolution-data-server-devel >= 2.22.0
 BuildRequires:	gettext-devel
 BuildRequires:	gnome-common
-BuildRequires:	gnome-desktop-devel >= 2.22.0
+BuildRequires:	glib2-devel >= 1:2.16.3
 BuildRequires:	gnome-doc-utils >= 0.12.0
-BuildRequires:	gnome-menus-devel >= 2.22.0
-BuildRequires:	gnome-vfs2-devel >= 2.22.0
-BuildRequires:	gtk+2-devel >= 2:2.12.5
-BuildRequires:	intltool >= 0.37.0
-BuildRequires:	libgnomeui-devel >= 2.22.0
+BuildRequires:	gnome-menus-devel >= 2.23.0
+BuildRequires:	gtk+2-devel >= 2:2.12.10
+BuildRequires:	libbonobo-devel >= 2.23.0
+BuildRequires:	intltool >= 0.40.0
+BuildRequires:	libgnomeui-devel >= 2.23.0
 BuildRequires:	libgtop-devel >= 2.14.8
 BuildRequires:	libsoup-devel >= 2.4.0
 BuildRequires:	libtool
@@ -33,7 +33,7 @@ BuildRequires:	sed >= 4.0
 Requires(post,postun):	gtk+2
 Requires(post,postun):	hicolor-icon-theme
 Requires(post,preun):	GConf2
-Requires:	gtk+2 >= 2:2.12.5
+Requires:	gtk+2 >= 2:2.12.10
 Requires:	libgnomeui >= 2.22.0
 # sr@Latn vs. sr@latin
 Conflicts:	glibc-misc < 6:2.7
