@@ -1,12 +1,12 @@
 Summary:	Utility to ease the reporting of bugs within the GNOME
 Summary(pl.UTF-8):	Narzędzie ułatwiające zgłaszanie błędów w środowisku GNOME
 Name:		bug-buddy
-Version:	2.23.90
+Version:	2.23.91.1
 Release:	1
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/bug-buddy/2.23/%{name}-%{version}.tar.bz2
-# Source0-md5:	93f81f9549471e07531b7d38fdc61439
+# Source0-md5:	17f77de7ba92eb467fa1b827ec64e9fa
 URL:		http://www.gnome.org/
 BuildRequires:	GConf2-devel >= 2.23.0
 BuildRequires:	autoconf
@@ -54,9 +54,6 @@ KDE.
 
 %prep
 %setup -q
-
-sed -i -e 's#sr@Latn#sr@latin#' po/LINGUAS
-mv po/sr@{Latn,latin}.po
 
 %build
 %{__glib_gettextize}
