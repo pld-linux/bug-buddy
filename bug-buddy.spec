@@ -1,28 +1,27 @@
 Summary:	Utility to ease the reporting of bugs within the GNOME
 Summary(pl.UTF-8):	Narzędzie ułatwiające zgłaszanie błędów w środowisku GNOME
 Name:		bug-buddy
-Version:	2.22.0
-Release:	2
+Version:	2.24.0
+Release:	1
 License:	GPL v2
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/bug-buddy/2.22/%{name}-%{version}.tar.bz2
-# Source0-md5:	092e1f91d0be4ca133cd0650622a6b06
-Patch0:		%{name}-pld.patch
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/bug-buddy/2.24/%{name}-%{version}.tar.bz2
+# Source0-md5:	d0fa514747137ce56dc123392d066630
 URL:		http://www.gnome.org/
-BuildRequires:	GConf2-devel >= 2.22.0
+BuildRequires:	GConf2-devel >= 2.24.0
 BuildRequires:	autoconf
 BuildRequires:	automake >= 1:1.9
 BuildRequires:	elfutils-devel
-BuildRequires:	evolution-data-server-devel >= 2.22.0
+BuildRequires:	evolution-data-server-devel >= 2.24.0
 BuildRequires:	gettext-devel
 BuildRequires:	gnome-common
-BuildRequires:	gnome-desktop-devel >= 2.22.0
+BuildRequires:	glib2-devel >= 1:2.18.0
 BuildRequires:	gnome-doc-utils >= 0.12.0
-BuildRequires:	gnome-menus-devel >= 2.22.0
-BuildRequires:	gnome-vfs2-devel >= 2.22.0
-BuildRequires:	gtk+2-devel >= 2:2.12.5
-BuildRequires:	intltool >= 0.37.0
-BuildRequires:	libgnomeui-devel >= 2.22.0
+BuildRequires:	gnome-menus-devel >= 2.24.0
+BuildRequires:	gtk+2-devel >= 2:2.14.0
+BuildRequires:	libbonobo-devel >= 2.24.0
+BuildRequires:	intltool >= 0.40.0
+BuildRequires:	libgnomeui-devel >= 2.24.0
 BuildRequires:	libgtop-devel >= 2.14.8
 BuildRequires:	libsoup-devel >= 2.4.0
 BuildRequires:	libtool
@@ -34,8 +33,8 @@ BuildRequires:	sed >= 4.0
 Requires(post,postun):	gtk+2
 Requires(post,postun):	hicolor-icon-theme
 Requires(post,preun):	GConf2
-Requires:	gtk+2 >= 2:2.12.5
-Requires:	libgnomeui >= 2.22.0
+Requires:	gtk+2 >= 2:2.14.0
+Requires:	libgnomeui >= 2.24.0
 # sr@Latn vs. sr@latin
 Conflicts:	glibc-misc < 6:2.7
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -55,12 +54,14 @@ KDE.
 
 %prep
 %setup -q
-%patch0 -p1
-
-sed -i -e 's#sr@Latn#sr@latin#' po/LINGUAS
-mv po/sr@{Latn,latin}.po
 
 %build
+cd google-breakpad
+%{__libtoolize}
+%{__aclocal}
+%{__autoconf}
+cd ..
+
 %{__glib_gettextize}
 %{__intltoolize}
 %{__libtoolize}
@@ -115,4 +116,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/%{name}
 %{_desktopdir}/bug-buddy.desktop
 %{_iconsdir}/hicolor/*/*/bug-buddy.png
+%{_iconsdir}/hicolor/*/*/bug-buddy.svg
 %{_sysconfdir}/gconf/schemas/bug-buddy.schemas
+%{_mandir}/man1/*.1*
