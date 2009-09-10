@@ -51,6 +51,8 @@ KDE.
 
 %prep
 %setup -q
+rm po/ca@valencia.po
+sed -i s#^ca@valencia## po/LINGUAS
 
 %build
 cd google-breakpad
