@@ -1,12 +1,12 @@
 Summary:	Utility to ease the reporting of bugs within the GNOME
 Summary(pl.UTF-8):	Narzędzie ułatwiające zgłaszanie błędów w środowisku GNOME
 Name:		bug-buddy
-Version:	2.30.0
+Version:	2.32.0
 Release:	1
 License:	GPL v2
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/bug-buddy/2.30/%{name}-%{version}.tar.bz2
-# Source0-md5:	da34ace8a806cd1c901ae960184e2997
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/bug-buddy/2.32/%{name}-%{version}.tar.bz2
+# Source0-md5:	86a84389c206396eba680e93288d04c8
 URL:		http://www.gnome.org/
 BuildRequires:	GConf2-devel >= 2.26.0
 BuildRequires:	autoconf
@@ -56,12 +56,6 @@ sed -i -e 's/^en@shaw//' po/LINGUAS
 rm -f po/en@shaw.po
 
 %build
-cd google-breakpad
-%{__libtoolize}
-%{__aclocal}
-%{__autoconf}
-cd ..
-
 %{__glib_gettextize}
 %{__intltoolize}
 %{__libtoolize}
@@ -82,8 +76,7 @@ rm -rf $RPM_BUILD_ROOT
 	DESTDIR=$RPM_BUILD_ROOT \
 	GCONF_DISABLE_MAKEFILE_SCHEMA_INSTALL=1
 
-rm -f $RPM_BUILD_ROOT%{_libdir}/gtk-2.0/modules/libgnomebreakpad.la
-rm -f $RPM_BUILD_ROOT%{_libdir}/bug-buddy/libbreakpad.{l,}a
+rm -f $RPM_BUILD_ROOT%{_libdir}/gtk-2.0/modules/libgnomesegvhandler.la
 
 %find_lang %{name} --all-name
 
@@ -106,13 +99,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README TODO
 %attr(755,root,root) %{_bindir}/bug-buddy
-%ifarch %{ix86}
-%attr(755,root,root) %{_bindir}/minidump_dump
-%attr(755,root,root) %{_bindir}/minidump_stackwalk
-%dir %{_libdir}/bug-buddy
-%attr(755,root,root) %{_libdir}/bug-buddy/libbreakpad.so*
-%endif
-%attr(755,root,root) %{_libdir}/gtk-2.0/modules/libgnomebreakpad.so
+%attr(755,root,root) %{_libdir}/gtk-2.0/modules/libgnomesegvhandler.so
 %{_datadir}/%{name}
 %{_desktopdir}/bug-buddy.desktop
 %{_iconsdir}/hicolor/*/*/bug-buddy.png
