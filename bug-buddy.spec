@@ -2,7 +2,7 @@ Summary:	Utility to ease the reporting of bugs within the GNOME
 Summary(pl.UTF-8):	Narzędzie ułatwiające zgłaszanie błędów w środowisku GNOME
 Name:		bug-buddy
 Version:	2.32.0
-Release:	1
+Release:	2
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/bug-buddy/2.32/%{name}-%{version}.tar.bz2
@@ -11,15 +11,17 @@ URL:		http://www.gnome.org/
 BuildRequires:	GConf2-devel >= 2.26.0
 BuildRequires:	autoconf
 BuildRequires:	automake >= 1:1.9
+BuildRequires:	cyrus-sasl-devel >= 2.0
 BuildRequires:	elfutils-devel
 BuildRequires:	evolution-data-server-devel >= 2.26.0
 BuildRequires:	gettext-devel
-BuildRequires:	gnome-common
 BuildRequires:	glib2-devel >= 1:2.20.0
+BuildRequires:	gnome-common
 BuildRequires:	gnome-doc-utils >= 0.12.0
 BuildRequires:	gtk+2-devel >= 2:2.16.0
-BuildRequires:	libbonobo-devel >= 2.24.0
 BuildRequires:	intltool >= 0.40.0
+BuildRequires:	libbonobo-devel >= 2.24.0
+BuildRequires:	libgdata-devel
 BuildRequires:	libgtop-devel >= 2.14.8
 BuildRequires:	libsoup-devel >= 2.26.0
 BuildRequires:	libtool
@@ -104,5 +106,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_desktopdir}/bug-buddy.desktop
 %{_iconsdir}/hicolor/*/*/bug-buddy.png
 %{_iconsdir}/hicolor/*/*/bug-buddy.svg
+%{_iconsdir}/HighContrastLargePrint/48x48/apps/bug-buddy.png
 %{_sysconfdir}/gconf/schemas/bug-buddy.schemas
 %{_mandir}/man1/*.1*
