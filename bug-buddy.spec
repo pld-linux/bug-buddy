@@ -29,7 +29,6 @@ BuildRequires:	libxml2-devel >= 1:2.6.31
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.311
 BuildRequires:	scrollkeeper >= 0.3.8
-BuildRequires:	sed >= 4.0
 Requires(post,postun):	gtk-update-icon-cache
 Requires(post,postun):	hicolor-icon-theme
 Requires(post,preun):	GConf2
@@ -45,7 +44,7 @@ files or crashed applications. Debian and KDE bug tracking systems are
 also supported.
 
 %description -l pl.UTF-8
-bug-budy jest narzędziem przeprowadzającym Cię przez proces składania
+bug-buddy jest narzędziem przeprowadzającym przez proces składania
 raportu o błędzie w środowisku GNOME. Potrafi on automatycznie uzyskać
 ślady ze stosu (backtrace) z plików core lub wywracających się
 aplikacji. Wspierane są również systemy obsługi błędów Debiana oraz
@@ -53,9 +52,6 @@ KDE.
 
 %prep
 %setup -q
-
-sed -i -e 's/^en@shaw//' po/LINGUAS
-rm -f po/en@shaw.po
 
 %build
 %{__glib_gettextize}
@@ -78,7 +74,7 @@ rm -rf $RPM_BUILD_ROOT
 	DESTDIR=$RPM_BUILD_ROOT \
 	GCONF_DISABLE_MAKEFILE_SCHEMA_INSTALL=1
 
-rm -f $RPM_BUILD_ROOT%{_libdir}/gtk-2.0/modules/libgnomesegvhandler.la
+%{__rm} $RPM_BUILD_ROOT%{_libdir}/gtk-2.0/modules/libgnomesegvhandler.la
 
 %find_lang %{name} --all-name
 
