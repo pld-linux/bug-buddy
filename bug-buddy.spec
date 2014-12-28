@@ -14,7 +14,7 @@ BuildRequires:	automake >= 1:1.9
 BuildRequires:	cyrus-sasl-devel >= 2.0
 BuildRequires:	elfutils-devel
 BuildRequires:	evolution-data-server-devel >= 2.26.0
-BuildRequires:	gettext-devel
+BuildRequires:	gettext-tools
 BuildRequires:	glib2-devel >= 1:2.20.0
 BuildRequires:	gnome-common
 BuildRequires:	gnome-doc-utils >= 0.12.0
